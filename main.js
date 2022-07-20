@@ -61,4 +61,17 @@ const retailCompanies = companies.filter(company => company.category ===
 const eightiesCompanies = companies.filter(company => (company.start >=
   1980 && company.start < 1990));
 
-  console.log(eightiesCompanies);
+ // Get companies that lasted 10 years or more
+ 
+const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
+
+// map
+
+//Create array of company names
+
+const companyNames = companies.map(function(company) {
+  return company.name;
+
+})
+
+console.log(companyNames)
