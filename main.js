@@ -69,9 +69,31 @@ const lastedTenYears = companies.filter(company => (company.end - company.start 
 
 //Create array of company names
 
-const companyNames = companies.map(function(company) {
-  return company.name;
+// const companyNames = companies.map(function(company) {
+//   return company.name;
+// });
 
-})
+// const testMap = companies.map(company => 
+//   `${company.name} [${company.start} - ${company.end}]`
+// );
 
-console.log(companyNames)
+const ageMap = ages
+.map(age => Math.sqrt(age))
+.map(age => age * 2)
+
+// console.log(ageMap);
+
+ // sort
+
+//  const sortedCompanies = companies.sort((c1, c2) => {
+//   if(c1.start > c2.start) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+//  });
+
+const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+
+ console.log(sortedCompanies);
+
