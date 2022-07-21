@@ -53,17 +53,17 @@ const companies= [
 //   }
 // });
 
-const retailCompanies = companies.filter(company => company.category ===
-  'Retail')
+// const retailCompanies = companies.filter(company => company.category ===
+//   'Retail')
 
 // Get 80's companies
 
-const eightiesCompanies = companies.filter(company => (company.start >=
-  1980 && company.start < 1990));
+//const eightiesCompanies = companies.filter(company => (company.start >=
+//  1980 && company.start < 1990));
 
  // Get companies that lasted 10 years or more
  
-const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
+// const lastedTenYears = companies.filter(company => (company.end - company.start >= 10));
 
 // map
 
@@ -77,9 +77,9 @@ const lastedTenYears = companies.filter(company => (company.end - company.start 
 //   `${company.name} [${company.start} - ${company.end}]`
 // );
 
-const ageMap = ages
-.map(age => Math.sqrt(age))
-.map(age => age * 2)
+// const ageMap = ages
+// .map(age => Math.sqrt(age))
+// .map(age => age * 2)
 
 // console.log(ageMap);
 
@@ -92,8 +92,46 @@ const ageMap = ages
 //     return -1;
 //   }
 //  });
+// Sort by start year
 
-const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
 
- console.log(sortedCompanies);
+// const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
 
+//  console.log(sortedCompanies);
+
+//  const sortAges = ages.sort((a, b) => a - b);
+
+//  console.log(sortAges)
+
+
+ // reduce
+
+// let ageSum = 0;
+// for(let i = 0; i < ages.length; i++) {
+//   ageSum += ages[i];
+// }
+
+// const ageSum = ages.reduce(function(total, age) {
+//   return total + age;
+// }, 0);
+
+
+// const ageSum = ages.reduce((total, age) => total + age, 0);
+
+
+// Get total years for all companies
+
+// const totalYears = companies.reduce((total, company) => 
+// total + (company.end - company.start), 0);
+
+// Combine Methods
+
+
+const combined = ages
+.map(age => age * 2)
+.filter(age => age >= 40)
+.sort((a , b) => a - b)
+.reduce((a, b) => a +b, 0);
+
+
+console.log(combined);
