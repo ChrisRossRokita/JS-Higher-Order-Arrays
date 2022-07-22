@@ -127,11 +127,17 @@ const companies= [
 // Combine Methods
 
 
-const combined = ages
-.map(age => age * 2)
-.filter(age => age >= 40)
-.sort((a , b) => a - b)
-.reduce((a, b) => a +b, 0);
+// const combined = ages
+// .map(age => age * 2)
+// .filter(age => age >= 40)
+// .sort((a , b) => a - b)
+// .reduce((a, b) => a + b, 0);
+
+const twoCombined = ages
+.map(age => age - 3)
+.filter(age => age <= 30)
+.sort((a ,b) => b - a)
+.reduce((a, b) => a + b, 0);
 
 
-console.log(combined);
+console.log(twoCombined);
